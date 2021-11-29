@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<div class="grid-container">
+<table>
   {% for row in board %}
-
+  <tr>
     {% for item in row %}
-    <div class="grid-item">{{ item }}</div>
+    <td>{{ item }}</td>
     {% endfor %}
-
+  </tr>
   {% endfor %}
-</div>
+</table>
 
 {% endblock %}
