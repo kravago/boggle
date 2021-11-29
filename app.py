@@ -1,12 +1,14 @@
 from boggle import Boggle
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 
-
+# game setup
 boggle_game = Boggle()
-board = boggle_game.make_board()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'letsplayboggle'
+
 
 @app.route('/')
 def home():
-    return render_template('board.html', board=board)
+    session['board'] = boggle_game.make_board()
+    return render_template('board.html')

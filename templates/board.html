@@ -3,7 +3,7 @@
 {% block content %}
 
 <table>
-  {% for row in board %}
+  {% for row in session['board'] %}
   <tr>
     {% for item in row %}
     <td>{{ item }}</td>
