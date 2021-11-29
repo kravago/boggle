@@ -20,3 +20,4 @@ def home():
 def submit_word():
     '''Handle the submission of guesses'''
     guess = request.args['guess']
+    print(guess)
