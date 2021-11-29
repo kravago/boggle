@@ -2,14 +2,24 @@
 
 {% block content %}
 
-<table>
+<table class="center-table">
   {% for row in session['board'] %}
   <tr>
     {% for item in row %}
-    <td>{{ item }}</td>
+    <td>
+      <div class="letter">{{ item }}</div>
+    </td>
     {% endfor %}
   </tr>
   {% endfor %}
 </table>
+
+<form action="">
+  <label for="guess">guess</label>
+  <input type="text" name="guess" id="">
+  <div>
+    <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+</form>
 
 {% endblock %}
