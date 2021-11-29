@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="grid-container">
+  {% for row in board %}
+
+    {% for item in row %}
+    <div class="grid-item">{{ item }}</div>
+    {% endfor %}
+
+  {% endfor %}
+</div>
+
+{% endblock %}
