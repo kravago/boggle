@@ -16,7 +16,7 @@ def home():
     session['board'] = boggle_game.make_board()
     return render_template('board.html')
 
-@app.route('/submit-word')
+@app.route('/submit-word', methods=['POST'])
 def submit_word():
     '''Handle the submission of guesses'''
     guess = request.args['guess']
