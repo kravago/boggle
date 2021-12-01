@@ -4,7 +4,8 @@ const btn = document.querySelector('#submit-guess');
 async function onSubmit() {
   // get guess value
   const input = document.querySelector('input[name="guess"]');
-  const res = await axios.post('/submit-word', data={guess: input.value})
+  const res = await axios.post('/submit-word', data={guess: input.value});
+  input.value = "";
 }
 
 btn.addEventListener("click", onSubmit);
