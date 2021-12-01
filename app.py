@@ -19,5 +19,6 @@ def home():
 @app.route('/submit-word', methods=['POST'])
 def submit_word():
     '''Handle the submission of guesses'''
-    guess = request.args['guess']
+    guess = request.args.get('guess')
     print(guess)
+    return 'hello'

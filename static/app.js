@@ -1,11 +1,17 @@
 const form = document.querySelector('#guess-form');
 const btn = document.querySelector('#submit-guess');
-const input = document.querySelector('input[name="guess"]');
 
-// function onSubmit() {
-//   axios.post('/submit-guess', data={})
-// }
+async function onSubmit() {
+  // get guess value
+  const input = document.querySelector('input[name="guess"]');
+  const res = await axios.post('/submit-word', data={guess: input.value})
+}
 
-form.addEventListener("submit", (evt) => {evt.preventDefault();})
+btn.addEventListener("click", onSubmit);
+
+form.addEventListener("submit", (evt) => {
+  //prevent refresh
+  evt.preventDefault();
+})
 
 
